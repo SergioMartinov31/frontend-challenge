@@ -1,0 +1,28 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0 62px;
+  background-color: #2196F3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.navButton{
+  color: #FFFFFF;
+  padding: 23px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+
+  &:hover{
+    background-color: #1E88E5;
+  }
+
+  &.active{
+    background-color: #1E88E5;
+  }
+}

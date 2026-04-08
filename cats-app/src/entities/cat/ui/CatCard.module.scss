@@ -1,0 +1,63 @@
+.cardSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 257px;
+  height: 256px;
+}
+
+.card {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  overflow: hidden;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.likeButton {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.card:hover .likeButton,
+.liked .likeButton,
+.card:has(.likeButton :focus-visible) .likeButton {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.card:hover,
+.liked,
+.card:has(.likeButton :focus-visible) {
+  width: 257px;
+  height: 256px;
+  box-shadow:
+    0 9px 18px rgba(0, 0, 0, 0.18),
+    0 6px 5px rgba(0, 0, 0, 0.24);
+}
+
+@media (hover: none) {
+  .likeButton {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
